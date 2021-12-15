@@ -1,0 +1,38 @@
+
+@model dotnet.Models.Student
+
+@{
+    ViewData["Title"]="New";
+  
+    
+
+}
+
+ 
+<div class="card mt-5 col-8 mx-auto">
+    <div class="card-header">
+        <div class="card-title">Add New Student Info</div>
+    </div>
+    <div class="card-body">
+        <form asp-controller="Student" asp-action="New" method="post">
+            <div class="form-group">
+                <label asp-for="FirstName"></label>
+                <input type="text" asp-for="FirstName" class="form-control form-control-sm">
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName"></label>
+                <input type="text" asp-for="LastName" class="form-control form-control-sm">
+            </div>
+            <div class="form-group">
+                <label asp-for="Address"></label>
+                <input type="text" asp-for="Address" class="form-control form-control-sm">
+            </div>
+             
+           
+            <div class="btn-group">
+                <button class="btn btn-sm btn-primary" type="submit">&nbsp;Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+

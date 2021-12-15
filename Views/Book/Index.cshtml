@@ -1,0 +1,47 @@
+@model IEnumerable<dotnet.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+
+
+}
+
+<a asp-controller="Book" asp-action="New" class="btn btn-primary btn-sm ">New</a>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <td>S.N</td>
+
+            <td>Book Name</td>
+            <td>Code</td>
+
+            <td>Action</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var sn = 1;
+            foreach (var book in Model)
+            {
+                <tr>
+                    <td>@(sn++)</td>
+                    <td>@book.BookName</td>
+                    <td>@book.Code</td>
+
+
+
+
+                    <td>
+                        <a asp-controller="Book" asp-action="Edit" asp-route-id="@book.BookId"
+                    class="btn btn-sm btn-success">Edit</a>
+                        <a asp-controller="Book" asp-action="Delete" asp-route-id="@book.BookId"
+                    class="btn btn-sm btn-danger">Remove</a>
+                    </td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>
